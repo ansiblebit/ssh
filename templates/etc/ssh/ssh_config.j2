@@ -18,8 +18,8 @@
 # ssh_config(5) man page.
 
 {%  if ssh_config is defined %}
-{%      for host, parameters in ssh_config.iteritems() | sort %}
-Host {{ host }}
+{%      for rule, parameters in ssh_config.iteritems() | sort %}
+{{ rule }}
 {%          for key, value in parameters.iteritems() | sort %}
     {{ key }} {{ value }}
 {%          endfor %}
