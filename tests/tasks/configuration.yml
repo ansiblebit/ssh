@@ -18,5 +18,7 @@
     - ssh_config
 
 - name: configuration | test ssh_config template generation
-  shell: diff -w {{ ssh_config_path }} /tmp/ssh_config.expected
+  shell: diff -w {{ item.value }} /tmp/{{ item.key }}.expected
   changed_when: no
+  with_dict:
+    ssh_config: "{{ ssh_config_path }}"
