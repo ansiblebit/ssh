@@ -22,7 +22,7 @@
     ssh_known_hosts_user:
       - user: vagrant
         hosts:
-          - example.com
+          - ansible.com
 
   roles:
     - role: ssh
