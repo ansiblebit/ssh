@@ -11,4 +11,5 @@
   with_items:
     - ssh_config
     - ssh_config_path
+    - ssh_known_hosts_global
     - ssh_known_hosts_path

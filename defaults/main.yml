@@ -5,5 +5,6 @@
 #
 
 ssh_config_path: /etc/ssh/ssh_config
+ssh_known_hosts_global: []
 ssh_known_hosts_path: /etc/ssh/ssh_known_hosts
 ssh_known_hosts_user_path: ~/.ssh/ssh_known_hosts
