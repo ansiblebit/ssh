@@ -1,0 +1,11 @@
+# file: ssh/defaults/debian.yml
+#
+# Default variables for Debian-based Linux distributions.
+#
+
+ssh_config:
+  '*':
+    SendEnv: LANG LC_*
+    HashKnownHosts: 'yes'
+    GSSAPIAuthentication: 'yes'
+    GSSAPIDelegateCredentials: 'no'
