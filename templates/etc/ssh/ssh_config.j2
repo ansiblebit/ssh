@@ -18,10 +18,11 @@
 # list of available options, their meanings and defaults, please see the
 # ssh_config(5) man page.
 
-{% if ssh_config is defined %}
-{%  for host, parameters in ssh_config.iteritems() %}
+{%  if ssh_config is defined %}
+{%      for host, parameters in ssh_config.iteritems() %}
 Host {{ host }}
-{%      for key, value in parameters | sort %}
+{%          for key, value in parameters | sort %}
     {{ key }} {{ value }}
+{%          endfor %}
 {%      endfor %}
-{%  endfor %}
+{%  endif %}
