@@ -6,7 +6,8 @@
 
 ssh_config:
   'Host *':
-    SendEnv: LANG LC_*
-    HashKnownHosts: 'yes'
+    GlobalKnownHostsFile: /etc/ssh/ssh_known_hosts
     GSSAPIAuthentication: 'yes'
     GSSAPIDelegateCredentials: 'no'
+    HashKnownHosts: 'yes'
+    SendEnv: LANG LC_*
