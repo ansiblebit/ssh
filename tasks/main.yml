@@ -33,3 +33,13 @@
 - debug:
     var=ssh_known_hosts_hash
   when: debug | default(false)
+
+- name: setup global known_hosts
+  known_hosts:
+    path="{{ ssh_known_hosts_path }}"
+    name="{{ item }}"
+    key="{{ lookup('pipe', 'ssh-keyscan -T 10 ' + ssh_known_hosts_hash|ternary('-H', '') + ' -t rsa ' + item + ' | sort') }}"
+    state=present
+  with_items: "{{ ssh_known_hosts_global }}"
+  changed_when: no
+  become: yes
