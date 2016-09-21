@@ -47,7 +47,7 @@ None.
 
     - hosts: servers
       roles:
-         - role: ssh_known_hosts
+         - role: ssh
 
 
 ## Tags
