@@ -1,5 +1,5 @@
 ---
-# file: primogen/handlers/main.yml
+# file: ssh_known_hosts/handlers/main.yml
 #
 # handlers file
 #

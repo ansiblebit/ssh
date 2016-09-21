@@ -1,5 +1,5 @@
 ---
-# file: primogen/tests/test.yml
+# file: ssh_known_hosts/tests/test.yml
 
 - name: setup python2
   hosts: "{{ vagrant_box }}"
@@ -19,7 +19,7 @@
     debug: yes
 
   roles:
-    - role: primogen
+    - role: ssh_known_hosts
 
     - role: tests
       tags: test
