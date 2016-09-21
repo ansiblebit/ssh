@@ -84,3 +84,4 @@
   become: yes
   with_items:
     - "{{ ssh_known_hosts_user }}"
+  changed_when: no
