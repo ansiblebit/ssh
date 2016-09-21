@@ -32,6 +32,7 @@
 ## Role Variables
 
 - **debug**: flag to run debug tasks.
+- **ssh_known_hosts_path**: path to the `ssh_known_hosts` file.
 
 
 ## Dependencies
@@ -87,3 +88,9 @@ $ vagrant provision trusty64.vagrant.dev
 # to access the Vagrant box
 $ vagrant ssh trusty64.vagrant.dev
 ```
+
+
+## Links
+
+- [stackoverflow > http://stackoverflow.com/questions/12136998/how-to-check-if-a-host-is-in-your-known-host-ssh](http://stackoverflow.com/questions/12136998/how-to-check-if-a-host-is-in-your-known-host-ssh)
+- [gist : bradland/ssh-known-hosts-mgmt.sh](https://gist.github.com/bradland/1315165)
