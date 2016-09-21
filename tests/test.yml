@@ -19,7 +19,7 @@
     debug: yes
 
   roles:
-    - role: ssh_known_hosts
+    - role: ssh
 
     - role: tests
       tags: test
