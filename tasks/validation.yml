@@ -1,5 +1,5 @@
 ---
-# file: primogen/tasks/validation.yml
+# file: ssh_known_hosts/tasks/validation.yml
 #
 # validation tasks.
 #
@@ -9,5 +9,4 @@
     msg="{{ item }} is a mandatory variable"
   when: "{{ item }} is not defined"
   with_items:
-    - debug
-
+    - ssh_known_hosts_path
