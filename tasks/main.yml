@@ -36,7 +36,7 @@
 
 - name: setup global known_hosts
   known_hosts:
-    path="{{ ssh_known_hosts_path }}"
+    path="{{ ssh_known_hosts_global_path }}"
     name="{{ item }}"
     key="{{ lookup('pipe', 'ssh-keyscan -T 10 ' + ssh_known_hosts_hash|ternary('-H', '') + ' -t rsa ' + item + ' | sort') }}"
     state=present

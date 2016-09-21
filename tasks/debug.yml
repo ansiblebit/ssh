@@ -11,4 +11,4 @@
     - ssh_config
     - ssh_config_path
     - ssh_known_hosts_global
-    - ssh_known_hosts_path
+    - ssh_known_hosts_global_path
