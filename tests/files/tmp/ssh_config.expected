@@ -18,6 +18,7 @@
 # ssh_config(5) man page.
 
 Host *
+    GlobalKnownHostsFile /etc/ssh/ssh_known_hosts
     GSSAPIAuthentication yes
     GSSAPIDelegateCredentials no
     HashKnownHosts yes
