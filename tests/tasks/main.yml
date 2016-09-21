@@ -4,5 +4,8 @@
 # Test tasks to verify role execution.
 #
 
+- include: configuration
+  tags: configuration
+
 - name: test if global known hosts are setup correctly
   command: ssh-keygen {{ '-H' if ssh_known_hosts_hash }} -f {{ ssh_known_hosts_path }} -F github.com
