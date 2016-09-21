@@ -1,0 +1,15 @@
+---
+# file: ssh/tasks/configuration.yml
+#
+# configuration tasks.
+#
+
+- name: configuration | ensure ssh_configuration integrity
+  template:
+    src=etc/ssh/ssh_config.j2
+    dest="{{ ssh_config_path }}"
+    owner=root
+    group=root
+    mode=0644
+  become: yes
+  notify: restart ssh
