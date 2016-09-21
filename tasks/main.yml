@@ -38,8 +38,49 @@
   known_hosts:
     path="{{ ssh_known_hosts_global_path }}"
     name="{{ item }}"
-    key="{{ lookup('pipe', 'ssh-keyscan -T 10 ' + ssh_known_hosts_hash|ternary('-H', '') + ' -t rsa ' + item + ' | sort') }}"
+    key="{{ lookup('pipe', 'ssh-keyscan -T 10 ' + ssh_known_hosts_hash|ternary('-H', '') + ' -t rsa ' + item) }}"
     state=present
+  become: yes
   with_items: "{{ ssh_known_hosts_global }}"
   changed_when: no
+
+- name: ensure ~/.ssh directory is present
+  file:
+    path="{{ item.user }}/.ssh"
+    owner="{{ item.user }}"
+    group="{{ item.user }}"
+    mode=0600
+    state=directory
   become: yes
+  with_items:
+    - "{{ ssh_known_hosts_user }}"
+
+- name: ensure ~/.ssh/known_hosts file is present
+  shell: "test -e ~{{ item.user }}/.ssh/known_hosts || touch ~{{ item.user }}/.ssh/known_hosts"
+  become: yes
+  with_items:
+    - "{{ ssh_known_hosts_user }}"
+  changed_when: no
+
+- name: setup user known_hosts
+  known_hosts:
+    path="~{{ item.0.user }}/.ssh/known_hosts"
+    name="{{ item.1 }}"
+    key="{{ lookup('pipe', 'ssh-keyscan -T 10 ' + ssh_known_hosts_hash|ternary('-H', '') + ' -t rsa ' + item.1) }}"
+    state=present
+  become: yes
+  with_subelements:
+    - "{{ ssh_known_hosts_user }}"
+    - hosts
+  changed_when: no
+
+- name: ensure ~/.ssh/know_hosts ownership and permissions are accurate
+  file:
+    path="~{{ item.user }}/.ssh/known_hosts"
+    owner="{{ item.user }}"
+    group="{{ item.user }}"
+    mode=0600
+    state=file
+  become: yes
+  with_items:
+    - "{{ ssh_known_hosts_user }}"
