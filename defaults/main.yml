@@ -1,5 +1,5 @@
 ---
-# file: ssh_known_hosts/defaults/main.yml
+# file: ssh/defaults/main.yml
 #
 # defaults file
 #

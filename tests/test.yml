@@ -1,5 +1,5 @@
 ---
-# file: ssh_known_hosts/tests/test.yml
+# file: ssh/tests/test.yml
 
 - name: setup python2
   hosts: "{{ vagrant_box }}"

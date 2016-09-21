@@ -1,5 +1,5 @@
 ---
-# file: ssh_known_hosts/handlers/main.yml
+# file: ssh/handlers/main.yml
 #
 # handlers file
 #

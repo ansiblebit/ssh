@@ -1,11 +1,8 @@
 ---
-# file: ssh_known_hosts/tests/tasks
+# file: ssh/tests/tasks
 #
 # Test tasks to verify role execution.
 #
 
-- debug:
-    msg="You need to define tests here!"
-  tags:
-    - debug
-    - test
+- name: test if global known hosts are setup correctly
+  command: ssh-keygen {{ '-H' if ssh_known_hosts_hash }} -f {{ ssh_known_hosts_path }} -F github.com

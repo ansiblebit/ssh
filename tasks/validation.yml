@@ -1,5 +1,5 @@
 ---
-# file: ssh_known_hosts/tasks/validation.yml
+# file: ssh/tasks/validation.yml
 #
 # validation tasks.
 #

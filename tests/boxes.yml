@@ -1,5 +1,5 @@
 ---
-# file: ssh_known_hosts/tests/boxes.yml
+# file: ssh/tests/boxes.yml
 #
 
 vagrant:
