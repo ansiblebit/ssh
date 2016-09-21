@@ -4,25 +4,25 @@
 # handlers file
 #
 
-- name: reload ssh server
+- name: reload ssh
   service:
     name=ssh
     state=reloaded
   become: yes
 
-- name: restart ssh server
+- name: restart ssh
   service:
     name=ssh
     state=restarted
   become: yes
 
-- name: start ssh server
+- name: start ssh
   service:
     name=ssh
     state=started
   become: yes
 
-- name: stop ssh server
+- name: stop ssh
   service:
     name=ssh
     state=stopped
