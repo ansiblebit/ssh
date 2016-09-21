@@ -8,4 +8,5 @@
   tags: configuration
 
 - name: test if global known hosts are setup correctly
-  command: ssh-keygen {{ if ssh_known_hosts_hash then '-H' endif }} -f {{ ssh_known_hosts_path }} -F github.com
+  command: ssh-keygen {{ '-H' if ssh_known_hosts_hash }} -f {{ ssh_known_hosts_path }} -F github.com
+  changed_when: no
