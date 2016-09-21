@@ -32,6 +32,7 @@
 ## Role Variables
 
 - **debug**: flag to run debug tasks.
+- **ssh_config**: `ssh_config` file configuration.
 - **ssh_config_path**: path to `ssh_config` file.
 - **ssh_known_hosts_path**: path to the `ssh_known_hosts` file.
 - **ssh_known_hosts_user_path**: path to the user's `known_hosts` file.
