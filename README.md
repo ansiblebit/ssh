@@ -47,6 +47,14 @@ None.
 ## Playbooks
 
     - hosts: servers
+      vars:
+        ssh_known_hosts_global:
+          - github.com
+        ssh_known_hosts_user:
+          - user: vagrant
+            hosts:
+              - bitbucket.com
+
       roles:
          - role: ssh
 
