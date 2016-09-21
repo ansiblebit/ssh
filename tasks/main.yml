@@ -28,7 +28,7 @@
 
 - name: register ssh_known_hosts_hash fact
   set_fact:
-    ssh_known_hosts_hash: "{{ task_hash_hostname is defined and task_hash_hostname.stdout.lower() == 'yes' }}"
+    ssh_known_hosts_hash: "{{ task_hash_hostname is defined and task_hash_hostname.stdout is defined and task_hash_hostname.stdout.lower() == 'yes' }}"
 
 - debug:
     var=ssh_known_hosts_hash
