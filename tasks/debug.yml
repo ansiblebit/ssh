@@ -13,4 +13,3 @@
     - ssh_known_hosts_global
     - ssh_known_hosts_global_path
     - ssh_known_hosts_user
-    - ssh_known_hosts_user_path
