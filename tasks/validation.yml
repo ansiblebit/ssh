@@ -4,7 +4,7 @@
 # validation tasks.
 #
 
-- name: ensure mandatory variables are set
+- name: validation | ensure mandatory variables are set
   fail:
     msg="{{ item }} is a mandatory variable"
   when: "{{ item }} is not defined"
@@ -14,4 +14,15 @@
     - ssh_known_hosts_global
     - ssh_known_hosts_global_path
     - ssh_known_hosts_user
-    - ssh_known_hosts_user_path
+
+- name: validation | keys of ssh_known_hosts_user have dictionary with user key
+  fail:
+    msg="user {{ item }} on ssh_known_hosts_user variable is missing the user key"
+  when: "{{ item.user is not defined }}"
+  with_items: "{{ ssh_known_hosts_user }}"
+
+- name: validation | keys of ssh_known_hosts_user have dictionary with hosts key
+  fail:
+    msg="user {{ item }} on ssh_known_hosts_user variable is missing the hosts list"
+  when: "{{ item.hosts is not defined }}"
+  with_items: "{{ ssh_known_hosts_user }}"
