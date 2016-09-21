@@ -4,7 +4,7 @@
 # Test tasks to verify role execution.
 #
 
-- include: configuration
+- include: configuration.yml
   tags: configuration
 
 - name: test if global known hosts are setup correctly
