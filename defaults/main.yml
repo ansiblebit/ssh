@@ -1,5 +1,7 @@
 ---
-# file: primogen/defaults/main.yml
+# file: ssh_known_hosts/defaults/main.yml
 #
 # defaults file
 #
+
+ssh_known_hosts_path: /etc/ssh/ssh_known_hosts
