@@ -18,6 +18,9 @@
 - include: validation.yml
   tags: validation
 
+- include: configuration.yml
+  tags: configuration
+
 - name: check if hostnames need to be hashed
   shell: grep HashKnownHosts {{ ssh_config_path }} | awk '{ print $2 }'
   changed_when: no
@@ -30,6 +33,3 @@
 - debug:
     var=ssh_known_hosts_hash
   when: debug | default(false)
-
-- include: configuration.yml
-  tags: configuration
