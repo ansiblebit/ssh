@@ -19,12 +19,16 @@
   tags: validation
 
 - name: check if hostnames need to be hashed
-  command: grep HashKnownHosts {{ ssh_config }} | awk '{ print $2 }'
+  shell: grep HashKnownHosts {{ ssh_config_path }} | awk '{ print $2 }'
   register: task_hash_hostname
 
 - name: register ssh_known_hosts_hash fact
   set_fact:
-    ssh_known_hosts_hash: task_hash_hostname.stdout.lower() == 'yes'
+    ssh_known_hosts_hash: "{{ task_hash_hostname is defined and task_hash_hostname.stdout.lower() == 'yes' }}"
+
+- debug:
+    var=ssh_known_hosts_hash
+  when: debug | default(false)
 
 - include: configuration.yml
   tags: configuration
