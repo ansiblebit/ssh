@@ -20,7 +20,7 @@
     ssh_known_hosts_global:
       - github.com
     ssh_known_hosts_user:
-      - user: vagrant
+      - user: "{{ ansible_user }}"
         hosts:
           - bitbucket.com
 
