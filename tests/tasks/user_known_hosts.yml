@@ -1,0 +1,13 @@
+---
+# file: ssh/tests/tasks/user_known_hosts.yml
+#
+# test user know_hosts configuration.
+#
+
+- name: user | check available host names on ~/.ssh/known_hosts
+  command: "ssh-keygen {{ '-H' if ssh_known_hosts_hash }} -f ~{{ item.0 }}/.ssh/known_hosts -F {{ item }}"
+  changed_when: no
+  with_subelements:
+    - "{{ ssh_known_hosts_user }}"
+    - hosts
+  become: yes

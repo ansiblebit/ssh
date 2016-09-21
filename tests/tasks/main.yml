@@ -9,3 +9,6 @@
 
 - include: global_known_hosts.yml
   tags: [ global, known_hosts ]
+
+- include: user_known_hosts.yml
+  tags: [ user, known_hosts ]
