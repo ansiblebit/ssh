@@ -36,6 +36,7 @@
 - **ssh_config_path**: path to `ssh_config` file.
 - **ssh_known_hosts_global**: list of hostname that need to be on the global `ssh_known_hosts` file.
 - **ssh_known_hosts_global_path**: path to the `ssh_known_hosts` file.
+- **ssh_known_hosts_user**: list of hostname that need to be on a user's `known_hosts` file.
 - **ssh_known_hosts_user_path**: path to the user's `known_hosts` file.
 
 
