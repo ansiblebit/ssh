@@ -17,6 +17,8 @@
 
   vars:
     debug: yes
+    ssh_known_hosts_global:
+      - github.com
 
   roles:
     - role: ssh
