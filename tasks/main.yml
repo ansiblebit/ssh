@@ -20,6 +20,7 @@
 
 - name: check if hostnames need to be hashed
   shell: grep HashKnownHosts {{ ssh_config_path }} | awk '{ print $2 }'
+  changed_when: no
   register: task_hash_hostname
 
 - name: register ssh_known_hosts_hash fact
