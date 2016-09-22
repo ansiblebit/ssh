@@ -1,0 +1,24 @@
+---
+# file: ssh/tests/tasks/user_ssh_config.yml
+#
+# test user ssh configuration.
+#
+
+- name: configuration | test if /etc/ssh/ssh_config file is present?
+  shell: test -e {{ ssh_config_path }}
+  changed_when: no
+
+- name: configuration | copy ssh configuration test resources
+  copy:
+    src="tmp/{{ item }}.expected"
+    dest="/tmp/{{ item }}.expected"
+  become: yes
+  with_dict:
+    user_ssh_config: /home/vagrant/.ssh/config
+  changed_when: no
+
+- name: configuration | test ssh config template generation
+  shell: diff -w {{ item.value }} /tmp/{{ item.key }}.expected
+  with_dict:
+    user_ssh_config: /home/vagrant/.ssh/config
+  changed_when: no
