@@ -17,6 +17,11 @@
 
   vars:
     debug: yes
+    ssh_config_user:
+      vagrant:
+        'Host github.com': |
+          IdentityFile ~/.ssh/deploy
+
     ssh_known_hosts_global_scan:
       - github.com
     ssh_known_hosts_user_scan:
