@@ -13,8 +13,8 @@
     src="tmp/{{ item }}.expected"
     dest="/tmp/{{ item }}.expected"
   become: yes
-  with_dict:
-    user_ssh_config: /home/vagrant/.ssh/config
+  with_items:
+    - user_ssh_config
   changed_when: no
 
 - name: configuration | test ssh config template generation
