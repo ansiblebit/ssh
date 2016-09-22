@@ -16,7 +16,6 @@ galaxy_info:
         - wheezy
     - name: Ubuntu
       versions:
-       - yaketty
        - xenial
        - vivid
        - trusty
