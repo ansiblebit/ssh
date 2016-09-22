@@ -5,6 +5,7 @@
 #
 
 ssh_config_path: /etc/ssh/ssh_config
+ssh_config_user: {}
 ssh_known_hosts_global_scan: []
 ssh_known_hosts_global_path: /etc/ssh/ssh_known_hosts
 ssh_known_hosts_user_scan: []
