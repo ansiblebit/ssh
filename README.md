@@ -34,6 +34,7 @@
 - **debug**: flag to run debug tasks.
 - **ssh_config**: `ssh_config` file configuration.
 - **ssh_config_path**: path to `ssh_config` file.
+- **ssh_config_user**: `~user/.ssh/config` file contents.
 - **ssh_known_hosts_global_scan**: list of hostname that after a `keyscan` are added to the global `ssh_known_hosts` file.
 - **ssh_known_hosts_global_path**: path to the `ssh_known_hosts` file.
 - **ssh_known_hosts_user_scan**: list of hostnames that after a `keyscan` are added to the user's `known_hosts` file.
@@ -48,6 +49,10 @@ None.
 
     - hosts: servers
       vars:
+        ssh_config_user:
+          vagrant:
+            'Host github.com': |
+              IdentityFile ~/.ssh/deploy
         ssh_known_hosts_global_scan:
           - github.com
         ssh_known_hosts_user_scan:
