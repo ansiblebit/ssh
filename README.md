@@ -1,12 +1,12 @@
 # ssh
 
-[![License](https://img.shields.io/badge/license-New%20BSD-blue.svg?style=flat)](https://raw.githubusercontent.com/ansiblebit/ssh_known_hosts/master/LICENSE)
-[![Build Status](https://travis-ci.org/ansiblebit/ssh_known_hosts.svg?branch=master)](https://travis-ci.org/ansiblebit/ssh_known_hosts)
+[![License](https://img.shields.io/badge/license-New%20BSD-blue.svg?style=flat)](https://raw.githubusercontent.com/ansiblebit/ssh/master/LICENSE)
+[![Build Status](https://travis-ci.org/ansiblebit/ssh_known_hosts.svg?branch=master)](https://travis-ci.org/ansiblebit/ssh)
 
 [![Platform](http://img.shields.io/badge/platform-debian-a80030.svg?style=flat)](#)
 [![Platform](http://img.shields.io/badge/platform-ubuntu-dd4814.svg?style=flat)](#)
 
-[![Project Stats](https://www.openhub.net/p/ansiblebit-ssh_known_hosts/widgets/project_thin_badge.gif)](https://www.openhub.net/p/ansiblebit-ssh_known_hosts/)
+[![Project Stats](https://www.openhub.net/p/ansiblebit-ssh_known_hosts/widgets/project_thin_badge.gif)](https://www.openhub.net/p/ansiblebit-ssh/)
 
 [Ansible][ansible] role to setup `/etc/ssh/known_hosts`.
 
