@@ -12,10 +12,10 @@
   copy:
     src="tmp/{{ item }}.expected"
     dest="/tmp/{{ item }}.expected"
-  sudo: yes
-  changed_when: no
+  become: yes
   with_items:
     - ssh_config
+  changed_when: no
 
 - name: configuration | test ssh_config template generation
   shell: diff -w {{ item.value }} /tmp/{{ item.key }}.expected

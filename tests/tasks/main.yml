@@ -4,11 +4,14 @@
 # Test tasks to verify role execution.
 #
 
-- include: configuration.yml
-  tags: configuration
+- include: global_config.yml
+  tags: [ global, ssh, configuration ]
 
 - include: global_known_hosts.yml
   tags: [ global, known_hosts ]
 
 - include: user_known_hosts.yml
   tags: [ user, known_hosts ]
+
+- include: user_ssh_config.yml
+  tags: [ user, ssh, configuration ]
