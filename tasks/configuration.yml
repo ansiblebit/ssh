@@ -13,3 +13,13 @@
     mode=0644
   become: yes
   notify: restart ssh
+
+- name: configuration | ensure user ssh configuration integrity
+  template:
+    src=home/user/.ssh/config.j2
+    dest="~{{ item.key }}/.ssh/config"
+    owner="{{ item.key }}"
+    group="{{ item.key }}"
+    mode=0600
+  become: yes
+  with_dict: "{{ ssh_config_user }}"
