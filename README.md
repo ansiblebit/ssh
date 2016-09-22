@@ -8,7 +8,7 @@
 
 [![Project Stats](https://www.openhub.net/p/ansiblebit-ssh_known_hosts/widgets/project_thin_badge.gif)](https://www.openhub.net/p/ansiblebit-ssh/)
 
-[Ansible][ansible] role to setup `/etc/ssh/known_hosts`.
+[Ansible][ansible] role to configure `ssh` and manage known hosts.
 
 
 ## Tests
