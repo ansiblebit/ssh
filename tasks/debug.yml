@@ -10,6 +10,7 @@
   with_items:
     - ssh_config
     - ssh_config_path
+    - ssh_config_user
     - ssh_known_hosts_global_scan
     - ssh_known_hosts_global_path
     - ssh_known_hosts_user_scan
