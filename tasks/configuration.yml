@@ -16,7 +16,7 @@
 
 - name: configuration | ensure user ssh configuration integrity
   template:
-    src=home/user/.ssh/config.j2
+    src=home/user/ssh/config.j2
     dest="~{{ item.key }}/.ssh/config"
     owner="{{ item.key }}"
     group="{{ item.key }}"
