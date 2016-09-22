@@ -11,18 +11,18 @@
   with_items:
     - ssh_config
     - ssh_config_path
-    - ssh_known_hosts_global
+    - ssh_known_hosts_global_scan
     - ssh_known_hosts_global_path
-    - ssh_known_hosts_user
+    - ssh_known_hosts_user_scan
 
-- name: validation | keys of ssh_known_hosts_user have dictionary with user key
+- name: validation | keys of ssh_known_hosts_user_scan have dictionary with user key
   fail:
-    msg="user {{ item }} on ssh_known_hosts_user variable is missing the user key"
+    msg="user {{ item }} on ssh_known_hosts_user_scan variable is missing the user key"
   when: "{{ item.user is not defined }}"
-  with_items: "{{ ssh_known_hosts_user }}"
+  with_items: "{{ ssh_known_hosts_user_scan }}"
 
-- name: validation | keys of ssh_known_hosts_user have dictionary with hosts key
+- name: validation | keys of ssh_known_hosts_user_scan have dictionary with hosts key
   fail:
-    msg="user {{ item }} on ssh_known_hosts_user variable is missing the hosts list"
+    msg="user {{ item }} on ssh_known_hosts_user_scan variable is missing the hosts list"
   when: "{{ item.hosts is not defined }}"
-  with_items: "{{ ssh_known_hosts_user }}"
+  with_items: "{{ ssh_known_hosts_user_scan }}"

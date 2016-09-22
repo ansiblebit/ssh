@@ -41,7 +41,7 @@
     key="{{ lookup('pipe', 'ssh-keyscan -T 10 ' + ssh_known_hosts_hash|ternary('-H', '') + ' -t rsa ' + item) }}"
     state=present
   become: yes
-  with_items: "{{ ssh_known_hosts_global }}"
+  with_items: "{{ ssh_known_hosts_global_scan }}"
   changed_when: no
 
 - name: ensure ~/.ssh directory is present
@@ -53,13 +53,13 @@
     state=directory
   become: yes
   with_items:
-    - "{{ ssh_known_hosts_user }}"
+    - "{{ ssh_known_hosts_user_scan }}"
 
 - name: ensure ~/.ssh/known_hosts file is present
   shell: "test -e ~{{ item.user }}/.ssh/known_hosts || touch ~{{ item.user }}/.ssh/known_hosts"
   become: yes
   with_items:
-    - "{{ ssh_known_hosts_user }}"
+    - "{{ ssh_known_hosts_user_scan }}"
   changed_when: no
 
 - name: setup user known_hosts
@@ -70,7 +70,7 @@
     state=present
   become: yes
   with_subelements:
-    - "{{ ssh_known_hosts_user }}"
+    - "{{ ssh_known_hosts_user_scan }}"
     - hosts
   changed_when: no
 
@@ -83,5 +83,5 @@
     state=file
   become: yes
   with_items:
-    - "{{ ssh_known_hosts_user }}"
+    - "{{ ssh_known_hosts_user_scan }}"
   changed_when: no

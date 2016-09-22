@@ -17,9 +17,9 @@
 
   vars:
     debug: yes
-    ssh_known_hosts_global:
+    ssh_known_hosts_global_scan:
       - github.com
-    ssh_known_hosts_user:
+    ssh_known_hosts_user_scan:
       - user: "{{ ansible_user|default(ansible_env.USER) }}"
         hosts:
           - bitbucket.com
