@@ -14,6 +14,16 @@
   become: yes
   notify: restart ssh
 
+- name: configuration | ensure user .ssh directory is present
+  file:
+    path="~{{ item.key }}/.ssh"
+    owner="{{ item.key }}"
+    group="{{ item.key }}"
+    mode=0700
+    state=directory
+  become: yes
+  with_dict: "{{ ssh_config_user }}"
+
 - name: configuration | ensure user ssh configuration integrity
   template:
     src=home/user/ssh/config.j2
