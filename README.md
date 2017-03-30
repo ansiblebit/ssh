@@ -50,7 +50,7 @@ None.
     - hosts: servers
       vars:
         ssh_config_user:
-          vagrant:
+          vagrant: |
             Host github.com
                 IdentityFile ~/.ssh/deploy
 
