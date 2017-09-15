@@ -1,4 +1,5 @@
 # ssh
+>>>>>>> primogen
 
 [![License](https://img.shields.io/badge/license-New%20BSD-blue.svg?style=flat)](https://raw.githubusercontent.com/ansiblebit/ssh/master/LICENSE)
 [![Build Status](https://travis-ci.org/ansiblebit/ssh_known_hosts.svg?branch=master)](https://travis-ci.org/ansiblebit/ssh)
@@ -9,6 +10,7 @@
 [![Project Stats](https://www.openhub.net/p/ansiblebit-ssh_known_hosts/widgets/project_thin_badge.gif)](https://www.openhub.net/p/ansiblebit-ssh/)
 
 [Ansible][ansible] role to configure `ssh` and manage known hosts.
+
 
 
 ## Tests
@@ -22,6 +24,7 @@
 | Debian | Ubuntu  | Vivid   | [![x86_64](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#) |
 | Debian | Ubuntu  | Trusty  | [![x86_64](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#) |
 | Debian | Ubuntu  | Precise | [![x86_64](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#)  |
+
 
 
 ## Requirements
@@ -38,6 +41,9 @@
 - **ssh_known_hosts_global_scan**: list of hostname that after a `keyscan` are added to the global `ssh_known_hosts` file.
 - **ssh_known_hosts_global_path**: path to the `ssh_known_hosts` file.
 - **ssh_known_hosts_user_scan**: list of hostnames that after a `keyscan` are added to the user's `known_hosts` file.
+
+
+- **debug**: flag to run debug tasks.
 
 
 ## Dependencies
