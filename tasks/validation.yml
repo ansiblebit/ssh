@@ -25,5 +25,5 @@
 - name: validation | keys of ssh_known_hosts_user_scan have dictionary with hosts key
   fail:
     msg="user {{ item }} on ssh_known_hosts_user_scan variable is missing the hosts list"
-  when: "{{ item.hosts is not defined }}"
+  when: item.hosts is not defined
   with_items: "{{ ssh_known_hosts_user_scan }}"
