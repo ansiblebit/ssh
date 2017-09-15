@@ -20,5 +20,5 @@
 - name: configuration | test ssh config template generation
   shell: diff -w {{ item.value }} /tmp/{{ item.key }}.expected
   with_dict:
-    user_ssh_config: /home/vagrant/.ssh/config
+    user_ssh_config: "/home/{{ ansible_user|default(ansible_env.USER) }}/.ssh/config"
   changed_when: no
