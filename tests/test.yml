@@ -19,7 +19,7 @@
   vars:
     debug: yes
     ssh_config_user:
-      vagrant: |
+      "{{ ansible_ssh_user }}": |
         Host github.com
             IdentityFile ~/.ssh/deploy
 
