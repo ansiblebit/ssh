@@ -7,7 +7,7 @@
 - name: validation | ensure mandatory variables are set
   fail:
     msg="{{ item }} is a mandatory variable"
-  when: "{{ item }} is not defined"
+  when: item is not defined
   with_items:
     - ssh_config
     - ssh_config_path
